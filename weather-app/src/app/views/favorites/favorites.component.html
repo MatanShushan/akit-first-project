@@ -1,0 +1,5 @@
+<div class="d-flex">
+  <mat-card *ngFor="let city of favoritesCitiesQuery$ | async">
+    {{ city.name }}
+  </mat-card>
+</div>

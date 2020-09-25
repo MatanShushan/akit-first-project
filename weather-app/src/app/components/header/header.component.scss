@@ -1,0 +1,27 @@
+@import '../../../assets/styles/variables.scss';
+
+.header-container {
+    background-color: $headerColor;
+    height: 50px;
+    padding: 5px;
+}
+
+.theme-btn {
+    color: $siteBackgroundColor;
+
+
+    &:hover,
+    &.active {
+        background-color: $siteBackgroundColor;
+        color: black;
+
+    }
+}
+
+.material-icons{
+    font-size: 25px;
+    color: $siteBackgroundColor;
+    &:hover{
+        cursor: pointer;
+    }
+}
