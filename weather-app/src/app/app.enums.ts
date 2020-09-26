@@ -1,3 +1,15 @@
 export enum LocalStorageKey {
-    favoritesCities = 'favoritesCities'
+    FavoritesCities = 'favoritesCities',
+    ViewState = 'ViewState'
+}
+
+export enum Theme {
+    Dark,
+    Light
+}
+
+
+export enum DegreeType {
+    Celsius,
+    Fahrenheit
 }

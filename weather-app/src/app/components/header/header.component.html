@@ -1,24 +1,44 @@
-<div class="d-flex justify-content-between header-container">
+<div class="d-flex justify-content-between header-container" *ngIf="viewState">
   <div class="ml-10 pull-left d-flex align-items-center">
     <span class="material-icons mr-2" routerLink="/home"> home </span>
     <span class="material-icons" routerLink="/favorites"> favorite </span>
   </div>
   <div class="mr-10 pull-right d-flex align-items-center">
-    <button
-      (click)="toggleTheme()"
-      mat-stroked-button
-      class="btn theme-btn"
-      [class.active]="!isLightThemeActive"
-    >
-      Dark
-    </button>
-    <button
-      (click)="toggleTheme()"
-      mat-stroked-button
-      class="btn theme-btn"
-      [class.active]="isLightThemeActive"
-    >
-      Light
-    </button>
+    <div class="mr-2">
+      <button
+        (click)="toggleDegreeType()"
+        mat-stroked-button
+        class="btn theme-btn"
+        [class.active]="!isCelsiusActive"
+      >
+        Fahrenheit
+      </button>
+      <button
+        (click)="toggleDegreeType()"
+        mat-stroked-button
+        class="btn theme-btn"
+        [class.active]="isCelsiusActive"
+      >
+        Celsius
+      </button>
+    </div>
+    <div>
+      <button
+        (click)="toggleTheme()"
+        mat-stroked-button
+        class="btn theme-btn"
+        [class.active]="!isLightThemeActive"
+      >
+        Dark
+      </button>
+      <button
+        (click)="toggleTheme()"
+        mat-stroked-button
+        class="btn theme-btn"
+        [class.active]="isLightThemeActive"
+      >
+        Light
+      </button>
+    </div>
   </div>
 </div>

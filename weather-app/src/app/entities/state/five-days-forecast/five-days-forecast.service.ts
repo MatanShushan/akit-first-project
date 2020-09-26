@@ -4,6 +4,7 @@ import { ID } from '@datorama/akita';
 import { HttpClient } from '@angular/common/http';
 import { FiveDaysForecastStore } from './five-days-forecast.store';
 import { FiveDaysForecast } from './five-days-forecast.model';
+import { UtilitiesService } from 'src/app/services/utilities.service';
 
 
 
@@ -11,6 +12,7 @@ import { FiveDaysForecast } from './five-days-forecast.model';
 export class FiveDaysForecastService {
 
   constructor(private fiveDaysForecastStore: FiveDaysForecastStore,
+    private utilitiesService: UtilitiesService,
     private http: HttpClient) {
   }
 
@@ -19,7 +21,11 @@ export class FiveDaysForecastService {
     //   .subscribe((entities: FiveDaysForecast) => {
     //     this.removeAll();
     //     this.fiveDaysForecastStore.set([entities]);
+    //   }, () => {
+    //     this.utilitiesService.showError();
     //   });
+
+
     let forecaset: FiveDaysForecast = <FiveDaysForecast>this.getMockData();
     this.removeAll();
     this.fiveDaysForecastStore.set([forecaset]);

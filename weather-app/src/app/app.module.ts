@@ -22,6 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { FiveDaysForecastComponent } from './components/five-days-forecast/five-days-forecast.component';
 import { OneDayForecastComponent } from './components/one-day-forecast/one-day-forecast.component';
+import { FavoriteItemComponent } from './components/favorite-item/favorite-item.component';
+import { DegreeTypePipe } from './pipes/degreeType/degree-type.pipe';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -33,7 +36,9 @@ import { OneDayForecastComponent } from './components/one-day-forecast/one-day-f
     HomeComponent,
     FavoritesComponent,
     FiveDaysForecastComponent,
-    OneDayForecastComponent
+    OneDayForecastComponent,
+    FavoriteItemComponent,
+    DegreeTypePipe
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,9 @@ import { OneDayForecastComponent } from './components/one-day-forecast/one-day-f
     MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    ToastrModule.forRoot(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

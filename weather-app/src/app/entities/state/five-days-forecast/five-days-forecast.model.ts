@@ -21,8 +21,8 @@ export interface DailyForecasts {
   Date: string;
   EpochDate: number;
   Temperature: {
-    Minimum: { Value: number, Unit: string, UnitType: number },
-    Maximum: { Value: number, Unit: string, UnitType: number }
+    Minimum: { Value: number, Unit: 'C' | 'F', UnitType: number },
+    Maximum: { Value: number, Unit: 'C' | 'F', UnitType: number }
   };
   Day: {
     Icon: number;

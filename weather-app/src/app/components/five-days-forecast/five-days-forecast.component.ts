@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { FavoritesCitiesService } from 'src/app/entities/state/favorites-cities/state/favorites-cities.service';
 import { FiveDaysForecast } from 'src/app/entities/state/five-days-forecast/five-days-forecast.model';
 import { FiveDaysForecastQuery } from 'src/app/entities/state/five-days-forecast/five-days-forecast.query';
@@ -11,7 +12,9 @@ import { FiveDaysForecastQuery } from 'src/app/entities/state/five-days-forecast
 export class FiveDaysForecastComponent implements OnInit {
   fiveDaysForecast: FiveDaysForecast;
 
-  constructor(private fiveDaysForecastQuery: FiveDaysForecastQuery, private favoritesCitiesService: FavoritesCitiesService) { }
+  constructor(
+    
+    private fiveDaysForecastQuery: FiveDaysForecastQuery, private favoritesCitiesService: FavoritesCitiesService) { }
 
 
   ngOnInit(): void {
@@ -19,14 +22,14 @@ export class FiveDaysForecastComponent implements OnInit {
       if (forecast && forecast[0]) {
         this.fiveDaysForecast = forecast[0];
       }
-
-    })
+    });
   }
 
   addToFavorites() {
     this.favoritesCitiesService.add({
       apiKey: '2333653',
-      name: 'tahizo'
+      name: 'tahizo',
+      currentWeather: null
     });
   }
 

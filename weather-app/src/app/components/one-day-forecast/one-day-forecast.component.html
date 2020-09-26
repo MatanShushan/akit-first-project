@@ -3,8 +3,14 @@
     {{ dailyForecasts.Date | date: "EEEE" }}
   </div>
   <div class="d-flex justify-content-center">
-    <span>{{ dailyForecasts.Temperature.Minimum.Value }}&#8451;</span>
+    <span>{{
+      dailyForecasts.Temperature.Minimum.Value
+        | degreeType: dailyForecasts.Temperature.Minimum.Unit
+    }}</span>
     <span>-</span>
-    <span>{{ dailyForecasts.Temperature.Maximum.Value }}&#8451;</span>
+    <span>{{
+      dailyForecasts.Temperature.Maximum.Value
+        | degreeType: dailyForecasts.Temperature.Minimum.Unit
+    }}</span>
   </div>
 </mat-card>

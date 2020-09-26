@@ -15,6 +15,8 @@ export class CityService {
   get(searchText: string) {
     // this.http.get(`http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${environment.weatherApiToken}&q=${searchText}`).subscribe((entities: City[]) => {
     //   this.cityStore.set(entities);
+    // }, () => {
+    //   this.utilitiesService.showError();
     // });
     let city: City = {
       id: 'sdf',

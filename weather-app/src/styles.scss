@@ -1,12 +1,13 @@
 @import './assets/styles/variables.scss';
 
 body {
-    background-color: $siteBackgroundColor;
+    background-color: var(--siteBackgroundColor);
 }
 
-.mr-10{
+.mr-10 {
     margin-right: 10%;
 }
-.ml-10{
+
+.ml-10 {
     margin-left: 10%;
 }

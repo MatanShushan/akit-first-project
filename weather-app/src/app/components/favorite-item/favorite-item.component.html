@@ -1,0 +1,20 @@
+<mat-card *ngIf="city && city.currentWeather" class="d-flex flex-column">
+  <div>
+    {{ city.name }}
+    {{ city.currentWeather.WeatherText }}
+  </div>
+  <div>
+    {{
+      city.currentWeather.Temperature.Metric.Value
+        | degreeType: city.currentWeather.Temperature.Metric.Unit
+    }}
+  </div>
+  <div>
+    <button mat-raised-button color="primary" (click)="navigateToFiveDays()">
+      Five Days
+    </button>
+    <button mat-raised-button color="warn" (click)="removeFromFavorites()">
+      Remove
+    </button>
+  </div>
+</mat-card>
