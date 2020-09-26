@@ -1,6 +1,12 @@
 import { ID } from '@datorama/akita';
 
 export interface FiveDaysForecast {
+  cityName: string;
+  cityKey: string;
+  data: FiveDaysForecastData;
+}
+
+export interface FiveDaysForecastData {
   id: ID;
   Headline: {
     EffectiveDate: string;
@@ -15,7 +21,6 @@ export interface FiveDaysForecast {
   };
   DailyForecasts: DailyForecasts[];
 }
-
 
 export interface DailyForecasts {
   Date: string;

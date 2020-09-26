@@ -27,7 +27,7 @@ export class FavoriteItemComponent implements OnInit {
   }
 
   navigateToFiveDays() {
-    this.fiveDaysForecastService.get(this.city.apiKey);
+    this.fiveDaysForecastService.get(this.city.apiKey, this.city.name);
     this.router.navigate(['home']);
   }
 

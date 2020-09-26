@@ -18,17 +18,17 @@ export class FiveDaysForecastComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.fiveDaysForecastQuery.selectAll().subscribe((forecast: FiveDaysForecast[]) => {
-      if (forecast && forecast[0]) {
-        this.fiveDaysForecast = forecast[0];
+    this.fiveDaysForecastQuery.selectFirst().subscribe((forecast: FiveDaysForecast) => {
+      if (forecast ) {
+        this.fiveDaysForecast = forecast;
       }
     });
   }
 
   addToFavorites() {
     this.favoritesCitiesService.add({
-      apiKey: '2333653',
-      name: 'tahizo',
+      apiKey: this.fiveDaysForecast.cityKey,
+      name: this.fiveDaysForecast.cityName,
       currentWeather: null
     });
   }

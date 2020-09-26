@@ -1,16 +1,16 @@
 <mat-card class="d-flex flex-column" *ngIf="fiveDaysForecast">
   <div class="d-flex justify-content-between">
-    <div>Tel Aviv</div>
+    <div>{{fiveDaysForecast.cityName}}</div>
     <div>
       <button (click)="addToFavorites()">Add To Favorites</button>
     </div>
   </div>
   <div class="d-flex justify-content-center mt-5 bold-center-text mb-5">
-    {{ fiveDaysForecast?.Headline?.Text }}
+    {{ fiveDaysForecast.data?.Headline?.Text }}
   </div>
   <div class="d-flex flex-wrap">
     <one-day-forecast
-      *ngFor="let dailyForecasts of fiveDaysForecast.DailyForecasts"
+      *ngFor="let dailyForecasts of fiveDaysForecast.data.DailyForecasts"
       [dailyForecasts]="dailyForecasts"
       class="m-2"
     ></one-day-forecast>

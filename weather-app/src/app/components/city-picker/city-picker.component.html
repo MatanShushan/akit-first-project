@@ -7,10 +7,14 @@
       formControlName="cityPicker"
       [matAutocomplete]="auto"
     />
-    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="citySelected($event)">
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="displayFn"
+      (optionSelected)="citySelected($event)"
+    >
       <mat-option
         *ngFor="let option of options | async"
-        [value]="option.Key"
+        [value]="{ key: option.Key, name: option.LocalizedName }"
       >
         {{ option.LocalizedName }}
       </mat-option>

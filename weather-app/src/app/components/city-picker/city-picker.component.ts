@@ -39,6 +39,6 @@ export class CityPickerComponent implements OnInit {
     return city && city.LocalizedName ? city.LocalizedName : '';
   }
   citySelected({ option: { value } }) {
-    this.fiveDaysForecastService.get(value);
+    this.fiveDaysForecastService.get(value.key, value.name);
   }
 }

@@ -25,6 +25,7 @@ import { OneDayForecastComponent } from './components/one-day-forecast/one-day-f
 import { FavoriteItemComponent } from './components/favorite-item/favorite-item.component';
 import { DegreeTypePipe } from './pipes/degreeType/degree-type.pipe';
 import { ToastrModule } from 'ngx-toastr';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -57,6 +58,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatProgressSpinnerModule,
     ToastrModule.forRoot(),
 
   ],

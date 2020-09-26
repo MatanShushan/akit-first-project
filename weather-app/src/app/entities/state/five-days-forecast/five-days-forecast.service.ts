@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ID } from '@datorama/akita';
 import { HttpClient } from '@angular/common/http';
 import { FiveDaysForecastStore } from './five-days-forecast.store';
-import { FiveDaysForecast } from './five-days-forecast.model';
+import { FiveDaysForecast, FiveDaysForecastData } from './five-days-forecast.model';
 import { UtilitiesService } from 'src/app/services/utilities.service';
 
 
@@ -16,19 +16,19 @@ export class FiveDaysForecastService {
     private http: HttpClient) {
   }
 
-  get(cityCode: string = '2333653') {
-    // this.http.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=${environment.weatherApiToken}&details=true&metric=false`)
-    //   .subscribe((entities: FiveDaysForecast) => {
-    //     this.removeAll();
-    //     this.fiveDaysForecastStore.set([entities]);
-    //   }, () => {
-    //     this.utilitiesService.showError();
-    //   });
+  get(cityCode: string, cityName: string) {
+    this.http.get(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/${cityCode}?apikey=${environment.weatherApiToken}&details=true&metric=false`)
+      .subscribe((entities: FiveDaysForecastData) => {
+        this.removeAll();
+        this.fiveDaysForecastStore.set([{ cityKey: cityCode, cityName: cityName, data: entities }]);
+      }, () => {
+        this.utilitiesService.showError();
+      });
 
 
-    let forecaset: FiveDaysForecast = <FiveDaysForecast>this.getMockData();
-    this.removeAll();
-    this.fiveDaysForecastStore.set([forecaset]);
+    // let forecaset: FiveDaysForecast = <FiveDaysForecast>this.getMockData();
+    // this.removeAll();
+    // this.fiveDaysForecastStore.set([forecaset]);
   }
 
   private removeAll() {
